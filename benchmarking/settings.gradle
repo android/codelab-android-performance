@@ -8,3 +8,4 @@ pluginManagement {
 
 rootProject.name = "Macrobenchmark Codelab"
 include ':app'
+include ':macrobenchmark'
