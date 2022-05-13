@@ -17,5 +17,23 @@
 package com.example.macrobenchmark_codelab.ui
 
 import android.app.Application
+import androidx.tracing.trace
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
-class JetsnackApplication : Application() 
+class JetsnackApplication : Application() {
+
+    override fun onCreate() {
+        super.onCreate()
+
+        initializeLibrary()
+    }
+
+    private fun initializeLibrary() {
+        trace("Custom library init") {
+            runBlocking {
+                delay(50)
+            }
+        }
+    }
+}
