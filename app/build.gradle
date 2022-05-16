@@ -24,9 +24,10 @@ plugins {
 
 android {
     compileSdkVersion 31
-
+    namespace 'com.example.macrobenchmark_codelab'
+    
     defaultConfig {
-        applicationId 'com.example.jetsnack'
+        applicationId 'com.example.macrobenchmark_codelab'
         minSdkVersion 21
         targetSdkVersion 31
         versionCode 1

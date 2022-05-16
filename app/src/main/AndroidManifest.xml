@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright 2020 The Android Open Source Project
 
   Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -12,8 +11,7 @@
   or implied. See the License for the specific language governing permissions and limitations under
   the License.
   -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.macrobenchmark_codelab">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--Load images from Unsplash-->
     <uses-permission android:name="android.permission.INTERNET" />
