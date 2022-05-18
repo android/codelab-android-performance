@@ -24,9 +24,13 @@ import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
-import androidx.navigation.*
+import androidx.navigation.NavBackStackEntry
+import androidx.navigation.NavGraphBuilder
+import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.navigation
+import androidx.navigation.navArgument
 import com.example.macrobenchmark_codelab.ui.components.JetsnackScaffold
 import com.example.macrobenchmark_codelab.ui.components.JetsnackSnackbar
 import com.example.macrobenchmark_codelab.ui.home.HomeSections
