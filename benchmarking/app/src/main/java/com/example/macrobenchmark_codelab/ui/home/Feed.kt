@@ -43,6 +43,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.trace
@@ -105,7 +106,9 @@ private fun SnackCollectionList(
 ) {
     var filtersVisible by rememberSaveable { mutableStateOf(false) }
     Box(modifier) {
-        LazyColumn {
+        LazyColumn(
+            modifier = Modifier.testTag("snack_list"),
+        ) {
             item {
                 Spacer(
                     Modifier.windowInsetsTopHeight(
@@ -136,6 +139,7 @@ private fun SnackCollectionList(
                         snackCollection = snackCollection,
                         onSnackClick = onSnackClick,
                         index = index,
+                        modifier = Modifier.testTag("snack_collection")
                     )
                 }
             }

@@ -50,6 +50,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -180,11 +181,13 @@ fun SnackItem(
 ) {
     JetsnackSurface(
         shape = MaterialTheme.shapes.medium,
-        modifier = modifier.padding(
-            start = 4.dp,
-            end = 4.dp,
-            bottom = 8.dp
-        )
+        modifier = modifier
+            .testTag("snack_item")
+            .padding(
+                start = 4.dp,
+                end = 4.dp,
+                bottom = 8.dp
+            )
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
@@ -223,6 +226,7 @@ private fun HighlightSnackItem(
     }
     JetsnackCard(
         modifier = modifier
+            .testTag("snack_item")
             .size(
                 width = 170.dp,
                 height = 250.dp

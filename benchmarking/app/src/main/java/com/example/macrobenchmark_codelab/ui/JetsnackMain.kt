@@ -41,6 +41,10 @@ fun JetsnackMain() {
     JetsnackTheme {
         val appState = rememberJetsnackAppState()
         JetsnackScaffold(
+            modifier = Modifier.semantics {
+                // Allows to use testTag() for UiAutomator resource-id.
+                testTagsAsResourceId = true
+            },
             bottomBar = {
                 if (appState.shouldShowBottomBar) {
                     JetsnackBottomBar(
