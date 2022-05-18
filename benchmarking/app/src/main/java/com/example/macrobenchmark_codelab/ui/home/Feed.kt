@@ -16,6 +16,7 @@
 
 package com.example.macrobenchmark_codelab.ui.home
 
+import android.app.Activity
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
@@ -43,10 +44,12 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.util.trace
+import androidx.core.view.doOnPreDraw
 import com.example.macrobenchmark_codelab.model.Filter
 import com.example.macrobenchmark_codelab.model.SnackCollection
 import com.example.macrobenchmark_codelab.model.SnackRepo
@@ -105,6 +108,18 @@ private fun SnackCollectionList(
     modifier: Modifier = Modifier
 ) {
     var filtersVisible by rememberSaveable { mutableStateOf(false) }
+
+    // Side effect to call [Activity.reportFullyDrawn] that represents when the UI is ready.
+    if (snackCollections.isNotEmpty()) {
+        val view = LocalView.current
+        LaunchedEffect(Unit) {
+            // Get Activity from View's context
+            val activity = view.context as? Activity
+            // Call reportFullyDrawn before draw happens
+            view.doOnPreDraw { activity?.reportFullyDrawn() }
+        }
+    }
+
     Box(modifier) {
         LazyColumn(
             modifier = Modifier.testTag("snack_list"),
