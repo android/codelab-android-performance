@@ -18,7 +18,6 @@ package com.example.macrobenchmark_codelab.ui.home
 
 import android.content.res.Configuration
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -34,7 +33,9 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.windowInsetsTopHeight
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -44,6 +45,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.util.trace
 import com.example.macrobenchmark_codelab.model.Filter
 import com.example.macrobenchmark_codelab.model.SnackCollection
 import com.example.macrobenchmark_codelab.model.SnackRepo
@@ -52,13 +54,24 @@ import com.example.macrobenchmark_codelab.ui.components.JetsnackDivider
 import com.example.macrobenchmark_codelab.ui.components.JetsnackSurface
 import com.example.macrobenchmark_codelab.ui.components.SnackCollection
 import com.example.macrobenchmark_codelab.ui.theme.JetsnackTheme
+import kotlinx.coroutines.delay
 
 @Composable
 fun Feed(
     onSnackClick: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val snackCollections = remember { SnackRepo.getSnacks() }
+    // Simulate loading data asynchronously.
+    // In real world application, you shouldn't have this kind of logic in your UI code, 
+    // but you should move it to appropriate layer.
+    var snackCollections by remember { mutableStateOf(listOf<SnackCollection>()) }
+    LaunchedEffect(Unit) {
+        trace("Snacks loading") {
+            delay(300)
+            snackCollections = SnackRepo.getSnacks()
+        }
+    }
+
     val filters = remember { SnackRepo.getFilters() }
     Feed(
         snackCollections,
@@ -75,7 +88,6 @@ private fun Feed(
     onSnackClick: (Long) -> Unit,
     modifier: Modifier = Modifier
 ) {
-
     JetsnackSurface(modifier = modifier.fillMaxSize()) {
         Box {
             SnackCollectionList(snackCollections, filters, onSnackClick)
@@ -84,7 +96,6 @@ private fun Feed(
     }
 }
 
-@OptIn(ExperimentalAnimationApi::class)
 @Composable
 private fun SnackCollectionList(
     snackCollections: List<SnackCollection>,
@@ -103,16 +114,30 @@ private fun SnackCollectionList(
                 )
                 FilterBar(filters, onShowFilters = { filtersVisible = true })
             }
-            itemsIndexed(snackCollections) { index, snackCollection ->
-                if (index > 0) {
-                    JetsnackDivider(thickness = 2.dp)
-                }
 
-                SnackCollection(
-                    snackCollection = snackCollection,
-                    onSnackClick = onSnackClick,
-                    index = index
-                )
+            if (snackCollections.isEmpty()) {
+                item {
+                    Box(
+                        modifier = Modifier
+                            .fillParentMaxWidth()
+                            .fillParentMaxHeight(0.75f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        CircularProgressIndicator(color = JetsnackTheme.colors.brand)
+                    }
+                }
+            } else {
+                itemsIndexed(snackCollections) { index, snackCollection ->
+                    if (index > 0) {
+                        JetsnackDivider(thickness = 2.dp)
+                    }
+
+                    SnackCollection(
+                        snackCollection = snackCollection,
+                        onSnackClick = onSnackClick,
+                        index = index,
+                    )
+                }
             }
         }
     }
@@ -135,6 +160,10 @@ private fun SnackCollectionList(
 @Composable
 fun HomePreview() {
     JetsnackTheme {
-        Feed(onSnackClick = { })
+        Feed(
+            onSnackClick = { },
+            snackCollections = SnackRepo.getSnacks(),
+            filters = SnackRepo.getFilters()
+        )
     }
 }
