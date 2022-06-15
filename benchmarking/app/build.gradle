@@ -119,4 +119,6 @@ dependencies {
     implementation Libs.Coil.coilCompose
 
     implementation Libs.AndroidX.tracingKtx
+
+    implementation("androidx.profileinstaller:profileinstaller:1.2.0-beta03")
 }
