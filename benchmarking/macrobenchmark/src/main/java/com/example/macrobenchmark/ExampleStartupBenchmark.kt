@@ -16,6 +16,7 @@
 
 package com.example.macrobenchmark
 
+import androidx.benchmark.macro.CompilationMode
 import androidx.benchmark.macro.StartupMode
 import androidx.benchmark.macro.StartupTimingMetric
 import androidx.benchmark.macro.junit4.MacrobenchmarkRule
@@ -44,10 +45,19 @@ class ExampleStartupBenchmark {
     val benchmarkRule = MacrobenchmarkRule()
 
     @Test
-    fun startup() = benchmarkRule.measureRepeated(
+    fun startupCompilationNone() = startup(CompilationMode.None())
+
+    @Test
+    fun startupCompilationPartial() = startup(CompilationMode.Partial())
+
+    @Test
+    fun startupCompilationFull() = startup(CompilationMode.Full())
+
+    fun startup(compilationMode: CompilationMode) = benchmarkRule.measureRepeated(
         packageName = "com.example.macrobenchmark_codelab",
         metrics = listOf(StartupTimingMetric()),
         iterations = 5,
+        compilationMode = compilationMode,
         startupMode = StartupMode.COLD,
     ) {
         pressHome()
