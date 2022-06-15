@@ -16,6 +16,7 @@
 
 package com.example.macrobenchmark
 
+import androidx.benchmark.macro.CompilationMode
 import androidx.benchmark.macro.FrameTimingMetric
 import androidx.benchmark.macro.StartupMode
 import androidx.benchmark.macro.junit4.MacrobenchmarkRule
@@ -33,11 +34,17 @@ class ScrollBenchmarks {
     val benchmarkRule = MacrobenchmarkRule()
 
     @Test
-    fun scroll() {
+    fun scrollCompilationNone() = scroll(CompilationMode.None())
+
+    @Test
+    fun scrollCompilationPartial() = scroll(CompilationMode.Partial())
+
+    private fun scroll(compilationMode: CompilationMode) {
         benchmarkRule.measureRepeated(
             packageName = "com.example.macrobenchmark_codelab",
             iterations = 5,
             metrics = listOf(FrameTimingMetric()),
+            compilationMode = compilationMode,
             startupMode = StartupMode.COLD,
             setupBlock = {
                 // Start the default activity, but don't measure the frames yet
