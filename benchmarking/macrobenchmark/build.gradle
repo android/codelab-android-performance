@@ -36,6 +36,18 @@ android {
 
     targetProjectPath = ":app"
     experimentalProperties["android.experimental.self-instrumenting"] = true
+
+    testOptions {
+        managedDevices {
+            devices {
+                pixel2Api31(com.android.build.api.dsl.ManagedVirtualDevice) {
+                    device = "Pixel 2"
+                    apiLevel = 31
+                    systemImageSource = "aosp" // TODO: use aosp-atd when b/228946895 is fixed
+                }
+            }
+        }
+    }
 }
 
 dependencies {
