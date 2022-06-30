@@ -297,7 +297,6 @@ fun SnackImage(
                 .crossfade(true)
                 .build(),
             contentDescription = contentDescription,
-            placeholder = painterResource(R.drawable.placeholder),
             modifier = Modifier.fillMaxSize(),
             contentScale = ContentScale.Crop,
         )
