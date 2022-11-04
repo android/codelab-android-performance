@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.macrobenchmark_codelab.ui.home
 
 import android.content.res.Configuration
@@ -63,7 +62,7 @@ fun Feed(
     modifier: Modifier = Modifier
 ) {
     // Simulate loading data asynchronously.
-    // In real world application, you shouldn't have this kind of logic in your UI code, 
+    // In real world application, you shouldn't have this kind of logic in your UI code,
     // but you should move it to appropriate layer.
     var snackCollections by remember { mutableStateOf(listOf<SnackCollection>()) }
     LaunchedEffect(Unit) {
