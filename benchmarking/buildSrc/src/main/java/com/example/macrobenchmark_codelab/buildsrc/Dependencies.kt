@@ -16,10 +16,6 @@
 
 package com.example.macrobenchmark_codelab.buildsrc
 
-object Versions {
-    const val ktlint = "0.45.2"
-}
-
 object Libs {
     const val androidGradlePlugin = "com.android.tools.build:gradle:7.3.1"
 
