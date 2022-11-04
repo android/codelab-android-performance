@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.macrobenchmark_codelab.ui.home
 
 import androidx.annotation.FloatRange
@@ -73,7 +72,7 @@ import com.example.macrobenchmark_codelab.ui.components.JetsnackSurface
 import com.example.macrobenchmark_codelab.ui.home.cart.Cart
 import com.example.macrobenchmark_codelab.ui.home.search.Search
 import com.example.macrobenchmark_codelab.ui.theme.JetsnackTheme
-import java.util.*
+import java.util.Locale
 
 fun NavGraphBuilder.addHomeGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,

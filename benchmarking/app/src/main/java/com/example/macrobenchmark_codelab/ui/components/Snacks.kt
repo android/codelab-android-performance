@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.example.macrobenchmark_codelab.ui.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
@@ -51,14 +50,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.example.macrobenchmark_codelab.R
 import com.example.macrobenchmark_codelab.model.CollectionType
 import com.example.macrobenchmark_codelab.model.Snack
 import com.example.macrobenchmark_codelab.model.SnackCollection
