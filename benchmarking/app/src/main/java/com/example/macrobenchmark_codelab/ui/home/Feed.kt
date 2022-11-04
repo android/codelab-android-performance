@@ -17,6 +17,7 @@ package com.example.macrobenchmark_codelab.ui.home
 
 import android.app.Activity
 import android.content.res.Configuration
+import androidx.activity.compose.ReportDrawnWhen
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.expandVertically
 import androidx.compose.animation.fadeIn
@@ -108,16 +109,9 @@ private fun SnackCollectionList(
 ) {
     var filtersVisible by rememberSaveable { mutableStateOf(false) }
 
-    // Side effect to call [Activity.reportFullyDrawn] that represents when the UI is ready.
-    if (snackCollections.isNotEmpty()) {
-        val view = LocalView.current
-        LaunchedEffect(Unit) {
-            // Get Activity from View's context
-            val activity = view.context as? Activity
-            // Call reportFullyDrawn before draw happens
-            view.doOnPreDraw { activity?.reportFullyDrawn() }
-        }
-    }
+    // Reports fully drawn state once the prediction is true
+    // The time when it's called refers to Time To Full Display
+    ReportDrawnWhen { snackCollections.isNotEmpty() }
 
     Box(modifier) {
         LazyColumn(
