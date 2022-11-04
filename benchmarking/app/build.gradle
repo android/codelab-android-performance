@@ -118,4 +118,7 @@ dependencies {
     implementation Libs.Coil.coilCompose
 
     implementation Libs.AndroidX.tracingKtx
+
+    // TODO use 1.2.1 when shipped
+    implementation 'androidx.profileinstaller:profileinstaller:1.3.0-alpha01'
 }
