@@ -16,12 +16,8 @@
 
 package com.example.macrobenchmark_codelab.buildsrc
 
-object Versions {
-    const val ktlint = "0.45.2"
-}
-
 object Libs {
-    const val androidGradlePlugin = "com.android.tools.build:gradle:7.3.0-beta05"
+    const val androidGradlePlugin = "com.android.tools.build:gradle:7.3.1"
 
     object Accompanist {
         const val version = "0.24.8-beta"
@@ -65,7 +61,7 @@ object Libs {
         }
 
         object Activity {
-            const val activityCompose = "androidx.activity:activity-compose:1.4.0"
+            const val activityCompose = "androidx.activity:activity-compose:1.7.0-alpha02"
         }
 
         object Lifecycle {
