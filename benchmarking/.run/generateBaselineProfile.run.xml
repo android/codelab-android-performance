@@ -4,7 +4,7 @@
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
-      <option name="scriptParameters" value="-P android.testInstrumentationRunnerArguments.class=com.example.macrobenchmark.BaselineProfileGenerator" />
+      <option name="scriptParameters" value="--rerun-tasks -P android.testInstrumentationRunnerArguments.class=com.example.macrobenchmark.BaselineProfileGenerator" />
       <option name="taskDescriptions">
         <list />
       </option>
