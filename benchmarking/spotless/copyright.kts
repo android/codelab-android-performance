@@ -1,5 +1,5 @@
 /*
- * Copyright 2022 The Android Open Source Project
+ * Copyright $YEAR The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,26 +14,3 @@
  * limitations under the License.
  */
 
-package com.example.macrobenchmark_codelab.ui
-
-import android.app.Application
-import androidx.tracing.trace
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
-
-class JetsnackApplication : Application() {
-
-    override fun onCreate() {
-        super.onCreate()
-
-        initializeLibrary()
-    }
-
-    private fun initializeLibrary() {
-        trace("Custom library init") {
-            runBlocking {
-                delay(50)
-            }
-        }
-    }
-}

@@ -23,13 +23,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 32
+    compileSdkVersion 33
     namespace 'com.example.macrobenchmark_codelab'
     
     defaultConfig {
         applicationId 'com.example.macrobenchmark_codelab'
         minSdkVersion 21
-        targetSdkVersion 32
+        targetSdkVersion 33
         versionCode 1
         versionName '1.0'
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
@@ -59,8 +59,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
     }
 
     buildFeatures {
@@ -86,7 +86,6 @@ android {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
     implementation Libs.Coroutines.android
     implementation Libs.Coroutines.core
 

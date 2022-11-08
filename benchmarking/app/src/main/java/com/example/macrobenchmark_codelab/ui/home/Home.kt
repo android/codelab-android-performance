@@ -73,7 +73,7 @@ import com.example.macrobenchmark_codelab.ui.components.JetsnackSurface
 import com.example.macrobenchmark_codelab.ui.home.cart.Cart
 import com.example.macrobenchmark_codelab.ui.home.search.Search
 import com.example.macrobenchmark_codelab.ui.theme.JetsnackTheme
-import java.util.*
+import java.util.Locale
 
 fun NavGraphBuilder.addHomeGraph(
     onSnackSelected: (Long, NavBackStackEntry) -> Unit,
