@@ -92,7 +92,6 @@ android {
 }
 
 dependencies {
-    implementation Libs.Kotlin.stdlib
     implementation Libs.Coroutines.android
     implementation Libs.Coroutines.core
 
