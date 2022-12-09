@@ -56,7 +56,7 @@ class ExampleStartupBenchmark {
     fun startup(compilationMode: CompilationMode) = benchmarkRule.measureRepeated(
         packageName = "com.example.macrobenchmark_codelab",
         metrics = listOf(StartupTimingMetric()),
-        iterations = 5,
+        iterations = 10,
         compilationMode = compilationMode,
         startupMode = StartupMode.COLD,
     ) {
