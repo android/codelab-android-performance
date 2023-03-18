@@ -46,12 +46,9 @@ class ScrollBenchmarks {
             metrics = listOf(FrameTimingMetric()),
             compilationMode = compilationMode,
             startupMode = StartupMode.COLD,
-            setupBlock = {
-                // Start the default activity, but don't measure the frames yet
-                pressHome()
-                startActivityAndWait()
-            }
         ) {
+            pressHome()
+            startActivityAndWait()
             val contentList = device.findObject(By.res("snack_list"))
 
             val searchCondition = Until.hasObject(By.res("snack_collection"))
