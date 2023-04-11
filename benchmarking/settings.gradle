@@ -29,5 +29,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Macrobenchmark Codelab"
+rootProject.name = "Macrobenchmark_Codelab"
 include ':app'

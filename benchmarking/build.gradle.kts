@@ -29,14 +29,12 @@ subprojects {
         mavenCentral()
     }
 
-    tasks.withType(KotlinCompile).configureEach {
+    tasks.withType<KotlinCompile>().configureEach {
         kotlinOptions {
-            // Treat all Kotlin warnings as errors (disabled by default)
-            allWarningsAsErrors = project.hasProperty("warningsAsErrors") ? project.warningsAsErrors : false
-            freeCompilerArgs += '-opt-in=kotlin.RequiresOptIn'
+            freeCompilerArgs += "-opt-in=kotlin.RequiresOptIn"
             // Enable experimental coroutines APIs, including Flow
-            freeCompilerArgs += '-opt-in=kotlin.Experimental'
-            jvmTarget = JavaVersion.VERSION_17
+            freeCompilerArgs += "-opt-in=kotlin.Experimental"
+            jvmTarget = JavaVersion.VERSION_17.toString()
         }
     }
 }

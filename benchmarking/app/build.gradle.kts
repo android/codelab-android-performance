@@ -21,13 +21,13 @@ plugins {
 }
 
 android {
-    compileSdk = libs.versions.compileSdk.get() as Integer
+    compileSdk = 33
     namespace = "com.example.macrobenchmark_codelab"
 
     defaultConfig {
         applicationId = "com.example.macrobenchmark_codelab"
-        minSdk = libs.versions.minSdk.get() as Integer
-        targetSdk = libs.versions.targetSdk.get() as Integer
+        minSdk = 21
+        targetSdk = 33
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -35,7 +35,7 @@ android {
 
     signingConfigs {
         // We use a bundled debug keystore, to allow debug builds from CI to be upgradable
-        debug {
+        getByName("debug") {
             storeFile = rootProject.file("debug.keystore")
             storePassword = "android"
             keyAlias = "androiddebugkey"
@@ -44,14 +44,17 @@ android {
     }
 
     buildTypes {
-        debug {
-            signingConfig = signingConfigs.debug
+        getByName("debug") {
+            signingConfig = signingConfigs.getByName("debug")
         }
 
-        release {
-            minifyEnabled = true
-            signingConfig = signingConfigs.debug
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        getByName("release") {
+            isMinifyEnabled = true
+            signingConfig = signingConfigs.getByName("debug")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
@@ -68,16 +71,16 @@ android {
         kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
 
-    packagingOptions {
+    packaging {
         // Multiple dependency bring these files in. Exclude them to enable
         // our test APK to build (has no effect on our AARs)
-        excludes += "/META-INF/AL2.0"
-        excludes += "/META-INF/LGPL2.1"
+        resources.excludes += "/META-INF/AL2.0"
+        resources.excludes += "/META-INF/LGPL2.1"
     }
 }
 
 dependencies {
-    def composeBom = platform(libs.androidx.compose.bom)
+    val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
