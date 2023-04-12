@@ -17,7 +17,7 @@
 package com.example.macrobenchmark_codelab.ui
 
 import android.app.Application
-import androidx.tracing.trace
+import androidx.compose.ui.util.trace
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
 
