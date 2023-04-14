@@ -18,6 +18,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
+    alias(libs.plugins.androidx.baselineprofile)
 }
 
 android {
@@ -80,6 +81,8 @@ android {
 }
 
 dependencies {
+    implementation(libs.profileinstaller)
+    "baselineProfile"(project(mapOf("path" to ":baselineprofile")))
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)

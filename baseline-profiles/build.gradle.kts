@@ -21,6 +21,7 @@ plugins {
     alias(libs.plugins.android.test) apply false
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
+    alias(libs.plugins.androidx.baselineprofile) apply false
 }
 
 subprojects {
