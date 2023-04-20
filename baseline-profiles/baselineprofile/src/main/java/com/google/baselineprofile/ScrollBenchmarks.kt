@@ -1,6 +1,5 @@
 package com.google.baselineprofile
 
-import android.util.Log
 import androidx.benchmark.macro.CompilationMode
 import androidx.benchmark.macro.FrameTimingMetric
 import androidx.benchmark.macro.StartupMode
@@ -29,17 +28,14 @@ class ScrollBenchmarks {
             packageName = "com.example.baselineprofiles_codelab",
             metrics = listOf(FrameTimingMetric()),
             compilationMode = compilationMode,
-            startupMode = StartupMode.COLD,
+            startupMode = StartupMode.WARM,
             iterations = 10,
             setupBlock = {
                 pressHome()
                 startActivityAndWait()
-                Log.d("Benchmark", "setupBlock iteration=$iteration")
-                waitForAsyncContent()
             },
             measureBlock = {
-                Log.d("Benchmark", "measureBlock iteration=$iteration")
-
+                waitForAsyncContent()
                 scrollSnackListJourney()
             }
         )

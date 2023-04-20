@@ -38,7 +38,6 @@ class ScrollBenchmarks {
             packageName = "com.example.macrobenchmark_codelab",
             iterations = 5,
             metrics = listOf(FrameTimingMetric()),
-            startupMode = StartupMode.COLD,
             setupBlock = {
                 // Start the default activity, but don't measure the frames yet
                 pressHome()
