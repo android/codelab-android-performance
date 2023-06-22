@@ -35,7 +35,7 @@ class BaselineProfileGenerator {
 
     @Test
     fun generate() {
-        rule.collectBaselineProfile("com.example.macrobenchmark_codelab") {
+        rule.collect("com.example.macrobenchmark_codelab") {
             startApplicationJourney()
             scrollSnackListJourney()
             goToSnackDetailJourney()
