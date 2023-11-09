@@ -21,13 +21,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "com.example.macrobenchmark_codelab"
 
     defaultConfig {
         applicationId = "com.example.macrobenchmark_codelab"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -111,7 +111,7 @@ dependencies {
 
     implementation(libs.androidx.runtime.tracing)
 
-    implementation("androidx.profileinstaller:profileinstaller:1.3.0")
+    implementation(libs.androidx.profileinstaller)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
