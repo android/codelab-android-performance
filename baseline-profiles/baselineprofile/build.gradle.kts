@@ -9,7 +9,7 @@ plugins {
 
 android {
     namespace = "com.google.baselineprofile"
-    compileSdk = 33
+    compileSdk = 34
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -21,8 +21,8 @@ android {
     }
 
     defaultConfig {
-        minSdk = 24
-        targetSdk = 33
+        minSdk = 28
+        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "com.example.macrobenchmark"
 
     compileOptions {
@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         minSdk = 23
-        targetSdk = 33
+        targetSdk = 34
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -39,10 +39,10 @@ android {
 }
 
 dependencies {
-    implementation("androidx.test.ext:junit:1.1.5")
-    implementation("androidx.test.espresso:espresso-core:3.5.1")
-    implementation("androidx.test.uiautomator:uiautomator:2.2.0")
-    implementation("androidx.benchmark:benchmark-macro-junit4:1.2.0-alpha13")
+    implementation(libs.androidx.test.ext.junit)
+    implementation(libs.androidx.test.espresso.core)
+    implementation(libs.androidx.test.uiautomator)
+    implementation(libs.androidx.benchmark.macrobenchmark.junit4)
 }
 
 androidComponents {

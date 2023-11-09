@@ -22,13 +22,13 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = 34
     namespace = "com.example.baselineprofiles_codelab"
 
     defaultConfig {
         applicationId = "com.example.baselineprofiles_codelab"
         minSdk = 21
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
