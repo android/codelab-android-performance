@@ -81,7 +81,8 @@ fun MacrobenchmarkScope.scrollSnackListJourney() {
 
 fun MacrobenchmarkScope.goToSnackDetailJourney() {
     val snackList = device.findObject(By.res("snack_list"))
-    val snacks = snackList.findObjects(By.res("snack_item"))
+    val snackCollection = snackList.findObject(By.res("snack_collection"))
+    val snacks = snackCollection.findObjects(By.res("snack_item"))
     // Select snack from the list based on running iteration
     val index = (iteration ?: 0) % snacks.size
     snacks[index].click()
