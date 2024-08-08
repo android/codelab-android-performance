@@ -62,6 +62,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
+        isCoreLibraryDesugaringEnabled = true
     }
 
     buildFeatures {
@@ -80,7 +81,13 @@ android {
     }
 }
 
+baselineProfile {
+    dexLayoutOptimization = true
+}
+
 dependencies {
+    coreLibraryDesugaring(libs.core.jdk.desugaring)
+
     implementation(libs.profileinstaller)
     "baselineProfile"(project(mapOf("path" to ":baselineprofile")))
     val composeBom = platform(libs.androidx.compose.bom)

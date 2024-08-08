@@ -39,7 +39,7 @@ class BaselineProfileGenerator {
 
     @Test
     fun generate() {
-        rule.collect("com.example.baselineprofiles_codelab") {
+        rule.collect("com.example.baselineprofiles_codelab", includeInStartupProfile = true) {
             // This block defines the app's critical user journey. Here we are interested in
             // optimizing for app startup. But you can also navigate and scroll
             // through your most important UI.
