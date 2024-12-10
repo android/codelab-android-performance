@@ -18,6 +18,7 @@ package com.example.macrobenchmark_codelab.ui.components
 
 import android.content.res.Configuration.UI_MODE_NIGHT_YES
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.indication
@@ -92,7 +93,7 @@ fun JetsnackButton(
                         minWidth = ButtonDefaults.MinWidth,
                         minHeight = ButtonDefaults.MinHeight
                     )
-                    .indication(interactionSource, rememberRipple())
+                    .indication(interactionSource, LocalIndication.current)
                     .padding(contentPadding),
                 horizontalArrangement = Arrangement.Center,
                 verticalAlignment = Alignment.CenterVertically,
