@@ -18,14 +18,14 @@ package com.example.baselineprofiles_codelab.model
 
 import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Immutable
-import com.example.baselineprofiles_codelab.R // Or your R file if different e.g. com.example.jetsnack.R
+import com.example.baselineprofiles_codelab.R
 
 @Immutable
 data class Snack(
     val id: Long,
     val name: String,
     @DrawableRes
-    val imageRes: Int, // Changed from imageUrl: String to imageRes: Int
+    val imageRes: Int,
     val price: Long,
     val tagline: String = "",
     val tags: Set<String> = emptySet()
@@ -34,196 +34,195 @@ data class Snack(
 /**
  * Static data
  */
-
 val snacks = listOf(
     Snack(
         id = 1L,
         name = "Cupcake",
         tagline = "A tag line",
-        imageRes = R.drawable.cupcake, // Assuming R.drawable.cupcake exists
+        imageRes = R.drawable.cupcake,
         price = 299
     ),
     Snack(
         id = 2L,
         name = "Donut",
         tagline = "A tag line",
-        imageRes = R.drawable.donut, // Assuming R.drawable.donut exists
+        imageRes = R.drawable.donut,
         price = 299
     ),
     Snack(
         id = 3L,
         name = "Eclair",
         tagline = "A tag line",
-        imageRes = R.drawable.eclair, // Assuming R.drawable.eclair exists
+        imageRes = R.drawable.eclair,
         price = 299
     ),
     Snack(
         id = 4L,
         name = "Froyo",
         tagline = "A tag line",
-        imageRes = R.drawable.froyo, // Assuming R.drawable.froyo exists
+        imageRes = R.drawable.froyo,
         price = 299
     ),
     Snack(
         id = 5L,
         name = "Gingerbread",
         tagline = "A tag line",
-        imageRes = R.drawable.gingerbread, // Assuming R.drawable.gingerbread exists
+        imageRes = R.drawable.gingerbread,
         price = 499
     ),
     Snack(
         id = 6L,
         name = "Honeycomb",
         tagline = "A tag line",
-        imageRes = R.drawable.honeycomb, // Assuming R.drawable.honeycomb exists
+        imageRes = R.drawable.honeycomb,
         price = 299
     ),
     Snack(
         id = 7L,
         name = "Ice Cream Sandwich",
         tagline = "A tag line",
-        imageRes = R.drawable.ice_cream_sandwich, // Assuming R.drawable.ice_cream_sandwich exists
+        imageRes = R.drawable.ice_cream_sandwich,
         price = 1299
     ),
     Snack(
         id = 8L,
         name = "Jellybean",
         tagline = "A tag line",
-        imageRes = R.drawable.jelly_bean, // Assuming R.drawable.jelly_bean exists (note the underscore)
+        imageRes = R.drawable.jelly_bean,
         price = 299
     ),
     Snack(
         id = 9L,
         name = "KitKat",
         tagline = "A tag line",
-        imageRes = R.drawable.kitkat, // Assuming R.drawable.kitkat exists
+        imageRes = R.drawable.kitkat,
         price = 549
     ),
     Snack(
         id = 10L,
         name = "Lollipop",
         tagline = "A tag line",
-        imageRes = R.drawable.lollipop, // Assuming R.drawable.lollipop exists
+        imageRes = R.drawable.lollipop,
         price = 299
     ),
     Snack(
         id = 11L,
         name = "Marshmallow",
         tagline = "A tag line",
-        imageRes = R.drawable.marshmallow, // Assuming R.drawable.marshmallow exists
+        imageRes = R.drawable.marshmallow,
         price = 299
     ),
     Snack(
         id = 12L,
         name = "Nougat",
         tagline = "A tag line",
-        imageRes = R.drawable.nougat, // Assuming R.drawable.nougat exists
+        imageRes = R.drawable.nougat,
         price = 299
     ),
     Snack(
         id = 13L,
         name = "Oreo",
         tagline = "A tag line",
-        imageRes = R.drawable.oreo, // Assuming R.drawable.oreo exists
+        imageRes = R.drawable.oreo,
         price = 299
     ),
     Snack(
         id = 14L,
         name = "Pie",
         tagline = "A tag line",
-        imageRes = R.drawable.pie, // Assuming R.drawable.pie exists
+        imageRes = R.drawable.pie,
         price = 299
     ),
     Snack(
         id = 15L,
         name = "Chips",
-        imageRes = R.drawable.chips, // Assuming R.drawable.chips exists
+        imageRes = R.drawable.chips,
         price = 299
     ),
     Snack(
         id = 16L,
         name = "Pretzels",
-        imageRes = R.drawable.pretzels, // Assuming R.drawable.pretzels exists
+        imageRes = R.drawable.pretzels,
         price = 299
     ),
     Snack(
         id = 17L,
         name = "Smoothies",
-        imageRes = R.drawable.smoothies, // Assuming R.drawable.smoothies exists
+        imageRes = R.drawable.smoothies,
         price = 299
     ),
     Snack(
         id = 18L,
         name = "Popcorn",
-        imageRes = R.drawable.popcorn, // Assuming R.drawable.popcorn exists
+        imageRes = R.drawable.popcorn,
         price = 299
     ),
     Snack(
         id = 19L,
         name = "Almonds",
-        imageRes = R.drawable.almonds, // Assuming R.drawable.almonds exists
+        imageRes = R.drawable.almonds,
         price = 299
     ),
     Snack(
         id = 20L,
         name = "Cheese",
-        imageRes = R.drawable.cheese, // Assuming R.drawable.cheese exists
+        imageRes = R.drawable.cheese,
         price = 299
     ),
     Snack(
         id = 21L,
         name = "Apples",
         tagline = "A tag line",
-        imageRes = R.drawable.apples, // Assuming R.drawable.apples exists
+        imageRes = R.drawable.apples,
         price = 299
     ),
     Snack(
         id = 22L,
         name = "Apple sauce",
         tagline = "A tag line",
-        imageRes = R.drawable.apple_sauce, // Assuming R.drawable.apple_sauce exists
+        imageRes = R.drawable.apple_sauce,
         price = 299
     ),
     Snack(
         id = 23L,
         name = "Apple chips",
         tagline = "A tag line",
-        imageRes = R.drawable.apple_chips, // Assuming R.drawable.apple_chips exists
+        imageRes = R.drawable.apple_chips,
         price = 299
     ),
     Snack(
         id = 24L,
         name = "Apple juice",
         tagline = "A tag line",
-        imageRes = R.drawable.apple_juice, // Assuming R.drawable.apple_juice exists
+        imageRes = R.drawable.apple_juice,
         price = 299
     ),
     Snack(
         id = 25L,
         name = "Apple pie",
         tagline = "A tag line",
-        imageRes = R.drawable.apple_pie, // Assuming R.drawable.apple_pie exists
+        imageRes = R.drawable.apple_pie,
         price = 299
     ),
     Snack(
         id = 26L,
         name = "Grapes",
         tagline = "A tag line",
-        imageRes = R.drawable.grapes, // Assuming R.drawable.grapes exists
+        imageRes = R.drawable.grapes,
         price = 299
     ),
     Snack(
         id = 27L,
         name = "Kiwi",
         tagline = "A tag line",
-        imageRes = R.drawable.kiwi, // Assuming R.drawable.kiwi exists
+        imageRes = R.drawable.kiwi,
         price = 299
     ),
     Snack(
         id = 28L,
         name = "Mango",
         tagline = "A tag line",
-        imageRes = R.drawable.mango, // Assuming R.drawable.mango exists
+        imageRes = R.drawable.mango,
         price = 299
     )
 )
