@@ -16,7 +16,8 @@
 
 package com.example.macrobenchmark_codelab.ui
 
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.consumeWindowInsets
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material.SnackbarHost
 import androidx.compose.runtime.Composable
@@ -48,7 +49,7 @@ fun JetsnackMain() {
             modifier = Modifier.semantics {
                 // Allows to use testTag() for UiAutomator resource-id.
                 testTagsAsResourceId = true
-            },
+            }.safeDrawingPadding(),
             bottomBar = {
                 if (appState.shouldShowBottomBar) {
                     JetsnackBottomBar(
@@ -70,7 +71,7 @@ fun JetsnackMain() {
             NavHost(
                 navController = appState.navController,
                 startDestination = MainDestinations.HOME_ROUTE,
-                modifier = Modifier.padding(innerPaddingModifier)
+                modifier = Modifier.consumeWindowInsets(innerPaddingModifier)
             ) {
                 jetsnackNavGraph(
                     onSnackSelected = appState::navigateToSnackDetail,
