@@ -16,13 +16,16 @@
 
 package com.example.baselineprofiles_codelab.model
 
+import androidx.annotation.DrawableRes
 import androidx.compose.runtime.Immutable
+import com.example.baselineprofiles_codelab.R // Or your R file if different e.g. com.example.jetsnack.R
 
 @Immutable
 data class Snack(
     val id: Long,
     val name: String,
-    val imageUrl: String,
+    @DrawableRes
+    val imageRes: Int, // Changed from imageUrl: String to imageRes: Int
     val price: Long,
     val tagline: String = "",
     val tags: Set<String> = emptySet()
@@ -37,190 +40,190 @@ val snacks = listOf(
         id = 1L,
         name = "Cupcake",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/pGM4sjt_BdQ",
+        imageRes = R.drawable.cupcake, // Assuming R.drawable.cupcake exists
         price = 299
     ),
     Snack(
         id = 2L,
         name = "Donut",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/Yc5sL-ejk6U",
+        imageRes = R.drawable.donut, // Assuming R.drawable.donut exists
         price = 299
     ),
     Snack(
         id = 3L,
         name = "Eclair",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/-LojFX9NfPY",
+        imageRes = R.drawable.eclair, // Assuming R.drawable.eclair exists
         price = 299
     ),
     Snack(
         id = 4L,
         name = "Froyo",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/3U2V5WqK1PQ",
+        imageRes = R.drawable.froyo, // Assuming R.drawable.froyo exists
         price = 299
     ),
     Snack(
         id = 5L,
         name = "Gingerbread",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/Y4YR9OjdIMk",
+        imageRes = R.drawable.gingerbread, // Assuming R.drawable.gingerbread exists
         price = 499
     ),
     Snack(
         id = 6L,
         name = "Honeycomb",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/bELvIg_KZGU",
+        imageRes = R.drawable.honeycomb, // Assuming R.drawable.honeycomb exists
         price = 299
     ),
     Snack(
         id = 7L,
         name = "Ice Cream Sandwich",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/YgYJsFDd4AU",
+        imageRes = R.drawable.ice_cream_sandwich, // Assuming R.drawable.ice_cream_sandwich exists
         price = 1299
     ),
     Snack(
         id = 8L,
         name = "Jellybean",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/0u_vbeOkMpk",
+        imageRes = R.drawable.jelly_bean, // Assuming R.drawable.jelly_bean exists (note the underscore)
         price = 299
     ),
     Snack(
         id = 9L,
         name = "KitKat",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/yb16pT5F_jE",
+        imageRes = R.drawable.kitkat, // Assuming R.drawable.kitkat exists
         price = 549
     ),
     Snack(
         id = 10L,
         name = "Lollipop",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/AHF_ZktTL6Q",
+        imageRes = R.drawable.lollipop, // Assuming R.drawable.lollipop exists
         price = 299
     ),
     Snack(
         id = 11L,
         name = "Marshmallow",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/rqFm0IgMVYY",
+        imageRes = R.drawable.marshmallow, // Assuming R.drawable.marshmallow exists
         price = 299
     ),
     Snack(
         id = 12L,
         name = "Nougat",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/qRE_OpbVPR8",
+        imageRes = R.drawable.nougat, // Assuming R.drawable.nougat exists
         price = 299
     ),
     Snack(
         id = 13L,
         name = "Oreo",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/33fWPnyN6tU",
+        imageRes = R.drawable.oreo, // Assuming R.drawable.oreo exists
         price = 299
     ),
     Snack(
         id = 14L,
         name = "Pie",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/aX_ljOOyWJY",
+        imageRes = R.drawable.pie, // Assuming R.drawable.pie exists
         price = 299
     ),
     Snack(
         id = 15L,
         name = "Chips",
-        imageUrl = "https://source.unsplash.com/UsSdMZ78Q3E",
+        imageRes = R.drawable.chips, // Assuming R.drawable.chips exists
         price = 299
     ),
     Snack(
         id = 16L,
         name = "Pretzels",
-        imageUrl = "https://source.unsplash.com/7meCnGCJ5Ms",
+        imageRes = R.drawable.pretzels, // Assuming R.drawable.pretzels exists
         price = 299
     ),
     Snack(
         id = 17L,
         name = "Smoothies",
-        imageUrl = "https://source.unsplash.com/m741tj4Cz7M",
+        imageRes = R.drawable.smoothies, // Assuming R.drawable.smoothies exists
         price = 299
     ),
     Snack(
         id = 18L,
         name = "Popcorn",
-        imageUrl = "https://source.unsplash.com/iuwMdNq0-s4",
+        imageRes = R.drawable.popcorn, // Assuming R.drawable.popcorn exists
         price = 299
     ),
     Snack(
         id = 19L,
         name = "Almonds",
-        imageUrl = "https://source.unsplash.com/qgWWQU1SzqM",
+        imageRes = R.drawable.almonds, // Assuming R.drawable.almonds exists
         price = 299
     ),
     Snack(
         id = 20L,
         name = "Cheese",
-        imageUrl = "https://source.unsplash.com/9MzCd76xLGk",
+        imageRes = R.drawable.cheese, // Assuming R.drawable.cheese exists
         price = 299
     ),
     Snack(
         id = 21L,
         name = "Apples",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/1d9xXWMtQzQ",
+        imageRes = R.drawable.apples, // Assuming R.drawable.apples exists
         price = 299
     ),
     Snack(
         id = 22L,
         name = "Apple sauce",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/wZxpOw84QTU",
+        imageRes = R.drawable.apple_sauce, // Assuming R.drawable.apple_sauce exists
         price = 299
     ),
     Snack(
         id = 23L,
         name = "Apple chips",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/okzeRxm_GPo",
+        imageRes = R.drawable.apple_chips, // Assuming R.drawable.apple_chips exists
         price = 299
     ),
     Snack(
         id = 24L,
         name = "Apple juice",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/l7imGdupuhU",
+        imageRes = R.drawable.apple_juice, // Assuming R.drawable.apple_juice exists
         price = 299
     ),
     Snack(
         id = 25L,
         name = "Apple pie",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/bkXzABDt08Q",
+        imageRes = R.drawable.apple_pie, // Assuming R.drawable.apple_pie exists
         price = 299
     ),
     Snack(
         id = 26L,
         name = "Grapes",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/y2MeW00BdBo",
+        imageRes = R.drawable.grapes, // Assuming R.drawable.grapes exists
         price = 299
     ),
     Snack(
         id = 27L,
         name = "Kiwi",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/1oMGgHn-M8k",
+        imageRes = R.drawable.kiwi, // Assuming R.drawable.kiwi exists
         price = 299
     ),
     Snack(
         id = 28L,
         name = "Mango",
         tagline = "A tag line",
-        imageUrl = "https://source.unsplash.com/TIGDsyy0TK4",
+        imageRes = R.drawable.mango, // Assuming R.drawable.mango exists
         price = 299
     )
 )
