@@ -60,11 +60,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
     buildFeatures {
         compose = true
     }
@@ -110,6 +105,7 @@ dependencies {
     implementation(libs.coil.kt.compose)
 
     implementation(libs.androidx.runtime.tracing)
+    implementation(libs.androidx.profileinstaller)
 
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
