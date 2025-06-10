@@ -19,7 +19,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.androidx.baselineprofile)
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
@@ -114,8 +114,6 @@ dependencies {
     implementation(libs.coil.kt.compose)
 
     implementation(libs.androidx.runtime.tracing)
-    implementation(libs.androidx.profileinstaller)
-
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.runner)

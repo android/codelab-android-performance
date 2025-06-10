@@ -112,8 +112,6 @@ dependencies {
     implementation(libs.androidx.runtime.tracing)
     implementation(libs.androidx.profileinstaller)
 
-    implementation(libs.androidx.profileinstaller)
-
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.runner)
