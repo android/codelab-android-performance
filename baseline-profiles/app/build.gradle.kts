@@ -19,7 +19,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.parcelize)
     alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.androidx.baselineprofile)
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
@@ -45,6 +45,15 @@ android {
         }
     }
 
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+
     buildTypes {
         getByName("debug") {
             signingConfig = signingConfigs.getByName("debug")
@@ -60,11 +69,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-
     buildFeatures {
         compose = true
     }
@@ -78,7 +82,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.profileinstaller)
+    implementation(libs.androidx.profileinstaller)
     "baselineProfile"(project(mapOf("path" to ":baselineprofile")))
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
@@ -110,7 +114,6 @@ dependencies {
     implementation(libs.coil.kt.compose)
 
     implementation(libs.androidx.runtime.tracing)
-
     androidTestImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.core)
     androidTestImplementation(libs.androidx.test.runner)

@@ -36,7 +36,6 @@ subprojects {
             freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
             // Enable experimental coroutines APIs, including Flow
             freeCompilerArgs.add("-opt-in=kotlin.Experimental")
-            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 }

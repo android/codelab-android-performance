@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -23,7 +22,7 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.kotlin.parcelize) apply false
     alias(libs.plugins.compose.compiler) apply false
-    alias(libs.plugins.androidx.baselineprofile) apply false
+    alias(libs.plugins.baselineprofile) apply false
 }
 
 subprojects {
@@ -37,7 +36,6 @@ subprojects {
             freeCompilerArgs.add("-opt-in=kotlin.RequiresOptIn")
             // Enable experimental coroutines APIs, including Flow
             freeCompilerArgs.add("-opt-in=kotlin.Experimental")
-            jvmTarget.set(JvmTarget.JVM_17)
         }
     }
 }

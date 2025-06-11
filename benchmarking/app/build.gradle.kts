@@ -60,8 +60,11 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = "11"
     }
 
     buildFeatures {
@@ -107,7 +110,6 @@ dependencies {
     implementation(libs.coil.kt.compose)
 
     implementation(libs.androidx.runtime.tracing)
-
     implementation(libs.androidx.profileinstaller)
 
     androidTestImplementation(libs.junit)

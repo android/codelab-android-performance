@@ -4,25 +4,25 @@ import com.android.build.api.dsl.ManagedVirtualDevice
 plugins {
     alias(libs.plugins.android.test)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.androidx.baselineprofile)
+    alias(libs.plugins.baselineprofile)
 }
 
 android {
     namespace = "com.google.baselineprofile"
-    compileSdk = 34
+    compileSdk = 35
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_17.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     defaultConfig {
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
