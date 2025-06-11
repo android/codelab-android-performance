@@ -82,7 +82,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.profileinstaller)
+    implementation(libs.androidx.profileinstaller)
     "baselineProfile"(project(mapOf("path" to ":baselineprofile")))
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
